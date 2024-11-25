@@ -1,0 +1,144 @@
+03/12/2024 21:44:28 - WARNING - train.loader.model.training_args - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+03/12/2024 21:44:28 - INFO - __main__ - Process rank: 0, device: mps, n_gpu: 1, distributed training: True
+[INFO|tokenization_utils_base.py:2044] 2024-03-12 21:44:28,724 >> loading file ./tokenizer.model
+[INFO|tokenization_utils_base.py:2044] 2024-03-12 21:44:28,724 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2044] 2024-03-12 21:44:28,724 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2044] 2024-03-12 21:44:28,724 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2044] 2024-03-12 21:44:28,724 >> loading file tokenizer.json
+num_proc must be <= 10. Reducing num_proc to 10 for dataset of size 10.
+[INFO|configuration_utils.py:726] 2024-03-12 21:44:30,922 >> loading configuration file /Users/xuzhiguo/workspace/model/internlm2-chat-7b/config.json
+[INFO|configuration_utils.py:726] 2024-03-12 21:44:30,924 >> loading configuration file /Users/xuzhiguo/workspace/model/internlm2-chat-7b/config.json
+[INFO|configuration_utils.py:791] 2024-03-12 21:44:30,924 >> Model config InternLM2Config {
+  "_name_or_path": "/Users/xuzhiguo/workspace/model/internlm2-chat-7b",
+  "architectures": [
+    "InternLM2ForCausalLM"
+  ],
+  "attn_implementation": "eager",
+  "auto_map": {
+    "AutoConfig": "configuration_internlm2.InternLM2Config",
+    "AutoModel": "modeling_internlm2.InternLM2ForCausalLM",
+    "AutoModelForCausalLM": "modeling_internlm2.InternLM2ForCausalLM"
+  },
+  "bias": false,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 32768,
+  "model_type": "internlm2",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pad_token_id": 2,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": {
+    "factor": 2.0,
+    "type": "dynamic"
+  },
+  "rope_theta": 1000000,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.38.2",
+  "use_cache": true,
+  "vocab_size": 92544
+}
+
+[INFO|modeling_utils.py:3254] 2024-03-12 21:44:30,982 >> loading weights file /Users/xuzhiguo/workspace/model/internlm2-chat-7b/pytorch_model.bin.index.json
+[INFO|modeling_utils.py:1400] 2024-03-12 21:44:30,983 >> Instantiating InternLM2ForCausalLM model under default dtype torch.float32.
+[INFO|configuration_utils.py:845] 2024-03-12 21:44:30,983 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "pad_token_id": 2
+}
+
+Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|█▎        | 1/8 [00:01<00:07,  1.05s/it]Loading checkpoint shards:  25%|██▌       | 2/8 [00:02<00:06,  1.03s/it]Loading checkpoint shards:  38%|███▊      | 3/8 [00:03<00:05,  1.05s/it]Loading checkpoint shards:  50%|█████     | 4/8 [00:07<00:08,  2.16s/it]Loading checkpoint shards:  62%|██████▎   | 5/8 [00:10<00:07,  2.54s/it]Loading checkpoint shards:  75%|███████▌  | 6/8 [00:13<00:05,  2.82s/it]Loading checkpoint shards:  88%|████████▊ | 7/8 [00:17<00:03,  3.28s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:21<00:00,  3.52s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:21<00:00,  2.73s/it]
+[INFO|modeling_utils.py:3992] 2024-03-12 21:44:53,049 >> All model checkpoint weights were used when initializing InternLM2ForCausalLM.
+
+[INFO|modeling_utils.py:4000] 2024-03-12 21:44:53,052 >> All the weights of InternLM2ForCausalLM were initialized from the model checkpoint at /Users/xuzhiguo/workspace/model/internlm2-chat-7b.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use InternLM2ForCausalLM for predictions without further training.
+[INFO|configuration_utils.py:798] 2024-03-12 21:44:53,068 >> loading configuration file /Users/xuzhiguo/workspace/model/internlm2-chat-7b/generation_config.json
+[INFO|configuration_utils.py:845] 2024-03-12 21:44:53,070 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "pad_token_id": 2
+}
+
+03/12/2024 21:45:53 - INFO - train.loader.model.model_loader - Gradient checkpointing enabled.
+03/12/2024 21:45:53 - INFO - train.loader.model.adapter - Fine-tuning method: LoRA
+03/12/2024 21:45:53 - INFO - train.loader.model.model_loader - model torch_dtype: torch.float32
+03/12/2024 21:45:53 - INFO - train.loader.model.model_loader - trainable params: 2621440 || all params: 7740329984 || trainable%: 0.0339
+[INFO|trainer.py:420] 2024-03-12 21:45:53,382 >> You have loaded a model on multiple GPUs. `is_model_parallel` attribute will be force-set to `True` to avoid any unexpected behavior such as device placement mismatching.
+[INFO|trainer.py:759] 2024-03-12 21:45:53,432 >> The following columns in the training set don't have a corresponding argument in `PeftModelForCausalLM.forward` and have been ignored: tools, messages. If tools, messages are not expected by `PeftModelForCausalLM.forward`,  you can safely ignore this message.
+[INFO|trainer.py:1812] 2024-03-12 21:45:53,443 >> ***** Running training *****
+[INFO|trainer.py:1813] 2024-03-12 21:45:53,443 >>   Num examples = 8
+[INFO|trainer.py:1814] 2024-03-12 21:45:53,443 >>   Num Epochs = 1
+[INFO|trainer.py:1815] 2024-03-12 21:45:53,443 >>   Instantaneous batch size per device = 4
+[INFO|trainer.py:1818] 2024-03-12 21:45:53,443 >>   Total train batch size (w. parallel, distributed & accumulation) = 4
+[INFO|trainer.py:1819] 2024-03-12 21:45:53,443 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1820] 2024-03-12 21:45:53,443 >>   Total optimization steps = 2
+[INFO|trainer.py:1821] 2024-03-12 21:45:53,443 >>   Number of trainable parameters = 2,621,440
+  0%|          | 0/2 [00:00<?, ?it/s]/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/utils/checkpoint.py:460: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/xuzhiguo/workspace/python/sagent/train/sft/workflow.py", line 119, in <module>
+    run_sft()
+  File "/Users/xuzhiguo/workspace/python/sagent/train/sft/workflow.py", line 70, in run_sft
+    train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/transformers/trainer.py", line 1961, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/transformers/trainer.py", line 2902, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/transformers/trainer.py", line 2925, in compute_loss
+    outputs = model(**inputs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/peft/peft_model.py", line 1091, in forward
+    return self.base_model(
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/peft/tuners/tuners_utils.py", line 160, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/Users/xuzhiguo/.cache/huggingface/modules/transformers_modules/internlm2-chat-7b/modeling_internlm2.py", line 1047, in forward
+    outputs = self.model(
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/xuzhiguo/.cache/huggingface/modules/transformers_modules/internlm2-chat-7b/modeling_internlm2.py", line 924, in forward
+    layer_outputs = torch.utils.checkpoint.checkpoint(
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/_compile.py", line 24, in inner
+    return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 489, in _fn
+    return fn(*args, **kwargs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 17, in inner
+    return fn(*args, **kwargs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 482, in checkpoint
+    return CheckpointFunction.apply(function, preserve, *args)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/autograd/function.py", line 553, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 261, in forward
+    outputs = run_function(*args)
+  File "/Users/xuzhiguo/.cache/huggingface/modules/transformers_modules/internlm2-chat-7b/modeling_internlm2.py", line 920, in custom_forward
+    return module(*inputs, output_attentions, None)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/xuzhiguo/.cache/huggingface/modules/transformers_modules/internlm2-chat-7b/modeling_internlm2.py", line 639, in forward
+    hidden_states, self_attn_weights, present_key_value = self.attention(
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/xuzhiguo/opt/anaconda3/envs/sagent/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/xuzhiguo/.cache/huggingface/modules/transformers_modules/internlm2-chat-7b/modeling_internlm2.py", line 378, in forward
+    attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
+RuntimeError: MPS backend out of memory (MPS allocated: 31.54 GB, other allocations: 1.92 GB, max allowed: 36.27 GB). Tried to allocate 3.02 GB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).
+  0%|          | 0/2 [00:09<?, ?it/s]
